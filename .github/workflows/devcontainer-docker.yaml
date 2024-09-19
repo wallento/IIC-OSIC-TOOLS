@@ -45,7 +45,7 @@ jobs:
           context: "./_build/devcontainer/image/"
           push: true
           tags: "${{ github.event.inputs.version }}"
-          labels: "${{ github.event.inputs.version }}"
+          labels: ${{ steps.meta.outputs.labels }}
           build-args: VERSION=${{ github.event.inputs.version }}
 
       - name: Generate artifact attestation
