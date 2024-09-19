@@ -1,4 +1,4 @@
-name: "Release devcontainer"
+name: "Build devcontainer"
 on:
   workflow_dispatch:
     inputs:
@@ -39,23 +39,3 @@ jobs:
           context: "./_build/devcontainer/image/"
           push: true
           tags: ${{ github.event.inputs.version }}
-
-  deploy-templates:
-    if: ${{ github.ref == 'refs/heads/main' }}
-    runs-on: ubuntu-latest
-    permissions:
-      packages: write
-      contents: write
-      pull-requests: write
-    steps:
-      - uses: actions/checkout@v3
-
-      - name: "Publish Templates"
-        uses: devcontainers/action@v1
-        with:
-          publish-templates: "true"
-          base-path-to-templates: "./_build/devcontainer/template"
-          generate-docs: "true"
-
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
