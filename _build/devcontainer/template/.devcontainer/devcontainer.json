@@ -1,7 +1,4 @@
 {
 	"name": "IIC-OSIC-TOOLS",
-	"build": {
-        // Path is relative to the devcontainer.json file.
-        "dockerfile": "Dockerfile"
-    }
+	"image": "ghcr.io/wallento/iic-osic-tools"
 }
