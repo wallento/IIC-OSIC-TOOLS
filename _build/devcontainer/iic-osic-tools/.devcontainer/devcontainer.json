@@ -1,0 +1,4 @@
+{
+	"name": "IIC-OSIC-TOOLS",
+	"image": "ghcr.io/wallento/iic-osic-tools:${templateOption:version}"
+}
