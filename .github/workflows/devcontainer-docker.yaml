@@ -39,5 +39,6 @@ jobs:
           context: "./_build/devcontainer/image/"
           push: true
           tags: ${{ github.event.inputs.version }}
+          labels: ${{ github.event.inputs.version }}
           build-args: |
             VERSION=${{ github.event.inputs.version }}
