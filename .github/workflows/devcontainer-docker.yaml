@@ -9,8 +9,10 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  REPO_NAME: ${{ github.repository }}
-  IMAGE_NAME: ${{ env.REPO_NAME }}-devcontainer
+  # This does not work as the lowercase conversion does not work then,
+  # and we don't want the name of the docker container to clash
+  #IMAGE_NAME: ${{ github.repository }}
+  IMAGE_NAME: ${{ github.repository_owner }}/iic-osic-tools-devcontainer
 
 jobs:
   build-and-push-image:
