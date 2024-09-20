@@ -17,7 +17,7 @@ jobs:
         uses: devcontainers/action@v1
         with:
           publish-templates: "true"
-          base-path-to-templates: "./_build/devcontainer/template"
+          base-path-to-templates: "./_build/devcontainer/iic-osic-tools"
           generate-docs: "true"
 
         env:
