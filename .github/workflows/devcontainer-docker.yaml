@@ -44,7 +44,7 @@ jobs:
         with:
           context: "./_build/devcontainer/image/"
           push: true
-          tags: ${{ steps.meta.outputs.tags }}
+          tags: "${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ github.event.inputs.version }}"
           labels: ${{ steps.meta.outputs.labels }}
           build-args: VERSION=${{ github.event.inputs.version }}
 
